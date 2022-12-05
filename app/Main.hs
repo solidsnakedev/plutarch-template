@@ -1,8 +1,8 @@
 module Main (main) where
 
-import qualified AlwaysSucceeds
-import Plutarch
+import AlwaysSucceeds qualified
 import Data.Default
+import Plutarch (compile)
 
 main :: IO ()
 main = do

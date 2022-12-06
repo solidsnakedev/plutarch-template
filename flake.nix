@@ -17,12 +17,17 @@
 
   };
 
-  outputs = inputs@{ self, tooling, plutus-simple-model, plutarch, ply}: tooling.lib.mkFlake { inherit self; }
+  outputs = inputs@{ self, tooling, plutus-simple-model, plutarch, ply }: tooling.lib.mkFlake { inherit self; }
     {
       imports = [
         (tooling.lib.mkHaskellFlakeModule1 {
           project.src = ./.;
-
+          project.shell.withHoogle = true;
+          project.modules = [
+            ({ config, ... }: {
+              packages.plutus-simple-model.doHaddock = false;
+            })
+          ];
           project.extraHackage = [
             "${plutus-simple-model}"
             "${plutarch}"

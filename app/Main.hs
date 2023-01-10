@@ -1,8 +1,12 @@
 module Main (main) where
 
 import AlwaysSucceeds qualified
-import Data.Default
-import Ply.Plutarch (writeTypedScript)
+import Data.Default (
+  def,
+ )
+import Ply.Plutarch (
+  writeTypedScript,
+ )
 
 main :: IO ()
 main = do

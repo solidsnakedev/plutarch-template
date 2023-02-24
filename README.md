@@ -56,7 +56,7 @@ This will start a local Hoogle server at http://localhost:8085/.
 Before committing your changes to your repository, it's recommended to run formatting checks to ensure your code adheres to the project's style guidelines.
 
 ## Formatting
-To format all Haskell (*.hs, *.cabal) and Nix (*.nix) files in the project, run the following command inside the development environment:
+To format all Haskell (`*.hs`, `*.cabal`) and Nix (`*.nix`) files in the project, run the following command inside the development environment:
 
 ```
 [nix develop:~/plutarch-template]$ ,format 

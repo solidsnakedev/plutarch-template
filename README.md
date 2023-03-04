@@ -11,6 +11,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
 # Set Up
+## On non-NixOS systems
 After installing Nix, you need to configure it to work with Nix Flake. Edit file `/etc/nix/nix.conf` with the following content:
 
 ```
@@ -19,6 +20,25 @@ experimental-features = nix-command flakes ca-derivations
 substituters = https://cache.nixos.org/
 trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 trusted-users = root <your-username>
+```
+```
+sudo systemctl restart nix-daemon.service
+```
+
+## On NixOS system
+Edit file `/etc/nixos/configuration.nix `
+
+```
+ nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes ca-derivations
+    '';
+  };
+  nix.settings.trusted-users = [ "root" "<your-username>"];
+```
+```
+sudo nixos-rebuild switch
 ```
 
 This configuration tells Nix to use the Nix binary cache at https://cache.nixos.org/ and enables experimental features such as Nix flakes and ca derivations.

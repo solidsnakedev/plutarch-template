@@ -10,6 +10,7 @@ Before starting this tutorial, you will need to have Nix installed on your syste
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
+
 # Set Up
 ## On non-NixOS systems
 After installing Nix, you need to configure it to work with Nix Flake. Edit file `/etc/nix/nix.conf` with the following content:

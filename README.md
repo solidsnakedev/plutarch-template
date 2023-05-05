@@ -6,9 +6,17 @@ This tutorial will guide you through setting up a development environment for Sm
 # Prerequisites
 Before starting this tutorial, you will need to have Nix installed on your system. If you don't have Nix installed, you can do so by running the following command:
 
+## Official option
+[Nix](https://nixos.org/download.html)
 ```
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
+## Preferred option
+[Determinate Systems](https://zero-to-nix.com/concepts/nix-installer)
+```
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
 
 
 # Set Up

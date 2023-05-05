@@ -25,6 +25,20 @@ trusted-users = root <your-username>
 ```
 sudo systemctl restart nix-daemon.service
 ```
+## MacOS
+```
+build-users-group = nixbld
+experimental-features = nix-command flakes ca-derivations
+substituters = https://cache.nixos.org/
+trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+trusted-users = <your-username>
+
+system = x86_64-darwin
+extra-platforms = x86_64-darwin aarch64-darwin
+sandbox = false
+extra-sandbox-paths = /System/Library/Frameworks /System/Library/PrivateFrameworks /usr/lib /private/tmp /private/var/tmp /usr/bin/env
+```
+save the changes and restart Mac
 
 ## On NixOS system
 Edit file `/etc/nixos/configuration.nix `

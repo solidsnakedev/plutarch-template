@@ -13379,11 +13379,11 @@
         "plutus": "plutus_5"
       },
       "locked": {
-        "lastModified": 1677153910,
-        "narHash": "sha256-wHQfFUVQH4yl37aIjaA7nutHUoeyIbLka1QaYDAeNeY=",
+        "lastModified": 1682006957,
+        "narHash": "sha256-GMsKbP66WcD65hesm7OvzeRVwrlLxC1RiCE542ltNNk=",
         "owner": "mlabs-haskell",
         "repo": "mlabs-tooling.nix",
-        "rev": "fa04ff4c5cca8255202fff0b65ceee3e1e106343",
+        "rev": "cd0cf0d29f17980befe384248c16937589912c69",
         "type": "github"
       },
       "original": {

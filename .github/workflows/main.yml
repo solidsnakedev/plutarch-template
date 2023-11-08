@@ -16,4 +16,4 @@ jobs:
       - name: Run the Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Run `nix develop --command cabal run`
-        run: nix develop --accept-flake-config --command cabal run
+        run: nix flake check

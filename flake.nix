@@ -34,6 +34,14 @@
           pkgs = import inputs.nixpkgs-latest { inherit system; };
         in
         {
+          pre-commit = {
+            settings = {
+              src = ./.;
+              hooks = {
+                commitizen.enable = true;
+              };
+            };
+          };
           onchain.default = {
             src = ./.;
             ghc.version = "ghc925";
@@ -42,7 +50,10 @@
             cabalFmt = { };
             hasktags = { };
             applyRefact = { };
-            shell = { };
+            shell = {
+              extraCommandLineTools =
+                [ pkgs.commitizen ];
+            };
             hoogleImage.enable = false;
             enableBuildChecks = true;
             enableHaskellFormatCheck = true;

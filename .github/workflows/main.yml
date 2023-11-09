@@ -15,5 +15,5 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@main
       - name: Run the Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@main
-      - name: Run `nix develop --command cabal run`
-        run: nix flake check
+      - name: Run `nix flake check`
+        run: nix flake check --accept-flake-config

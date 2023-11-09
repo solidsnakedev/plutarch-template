@@ -2,12 +2,12 @@ module Main (main) where
 
 import AlwaysSucceeds qualified
 import Data.Default (
-  def,
+    def,
  )
 import Ply.Plutarch (
-  writeTypedScript,
+    writeTypedScript,
  )
 
 main :: IO ()
 main = do
-  writeTypedScript def "test" "./alwaysSucceeds.plutus" AlwaysSucceeds.validator
+    writeTypedScript def "test" "./alwaysSucceeds.plutus" AlwaysSucceeds.validator

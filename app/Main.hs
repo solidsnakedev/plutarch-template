@@ -32,6 +32,7 @@ import PlutusLedgerApi.V2 (
 import "liqwid-plutarch-extra" Plutarch.Extra.Script (
     applyArguments,
  )
+import System.Directory (doesDirectoryExist, createDirectoryIfMissing)
 
 encodeSerialiseCBOR :: Script -> Text
 encodeSerialiseCBOR = Text.decodeUtf8 . Base16.encode . CBOR.serialize' . serialiseScript
@@ -59,4 +60,6 @@ writePlutusScript title filepath term = do
 
 main :: IO ()
 main = do
-    writePlutusScript "AlwaysSucceeds" "./AlwaysSucceeds.json" AlwaysSucceeds.validator
+    exist <- doesDirectoryExist "compiled"
+    createDirectoryIfMissing exist "compiled"
+    writePlutusScript "AlwaysSucceeds" "./compiled/AlwaysSucceeds.json" AlwaysSucceeds.validator

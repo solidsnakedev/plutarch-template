@@ -29,10 +29,10 @@ import PlutusLedgerApi.V2 (
     Data,
     ExBudget,
  )
+import System.Directory (createDirectoryIfMissing, doesDirectoryExist)
 import "liqwid-plutarch-extra" Plutarch.Extra.Script (
     applyArguments,
  )
-import System.Directory (doesDirectoryExist, createDirectoryIfMissing)
 
 encodeSerialiseCBOR :: Script -> Text
 encodeSerialiseCBOR = Text.decodeUtf8 . Base16.encode . CBOR.serialize' . serialiseScript

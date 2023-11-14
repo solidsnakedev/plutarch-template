@@ -89,7 +89,7 @@ This will build and run the executable.
 # Running Hoogle
 Hoogle is a Haskell API search engine. To run Hoogle locally for the Plutarch project, run the following command inside the development environment:
 
-```
+```bash
 [nix develop:~/plutarch-template]$ hoogle server --local --port=8085
 ```
 
@@ -101,8 +101,8 @@ Before committing your changes to your repository, it's recommended to run forma
 ## Formatting
 To format all Haskell (`*.hs`, `*.cabal`) and Nix (`*.nix`) files in the project, run the following command inside the development environment:
 
-```
-[nix develop:~/plutarch-template]$ ,format 
+```bash
+[nix develop:~/plutarch-template]$ nix run .#haskellFormat
 ```
 
 This will format all files in the project according to the project's style guidelines.
@@ -111,8 +111,8 @@ This will format all files in the project according to the project's style guide
 ## Formatting Check
 To check if any files need formatting, run the following command inside the development environment:
 
-```
-[nix develop:~/plutarch-template]$ ,format check
+```bash
+[nix develop:~/plutarch-template]$ nix flake check
 ```
 
 This will check all files in the project and report any that need formatting.

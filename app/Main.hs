@@ -29,6 +29,7 @@ import PlutusLedgerApi.V2 (
     Data,
     ExBudget,
  )
+import System.Directory (createDirectoryIfMissing, doesDirectoryExist)
 import "liqwid-plutarch-extra" Plutarch.Extra.Script (
     applyArguments,
  )
@@ -59,4 +60,6 @@ writePlutusScript title filepath term = do
 
 main :: IO ()
 main = do
-    writePlutusScript "AlwaysSucceeds" "./AlwaysSucceeds.json" AlwaysSucceeds.validator
+    exist <- doesDirectoryExist "compiled"
+    createDirectoryIfMissing exist "compiled"
+    writePlutusScript "AlwaysSucceeds" "./compiled/AlwaysSucceeds.json" AlwaysSucceeds.validator

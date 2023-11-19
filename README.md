@@ -105,10 +105,18 @@ To format all Haskell (`*.hs`, `*.cabal`) and Nix (`*.nix`) files in the project
 [nix develop:~/plutarch-template]$ nix run .#haskellFormat
 ```
 
+```bash
+[nix develop:~/plutarch-template]$ nix run .#nixFormat
+```
+
 This will format all files in the project according to the project's style guidelines.
 
+## List available tooling commands
+```bash
+[nix develop:~/plutarch-template]$ nix run .#help
+```
 
-## Formatting Check
+## Formatting Checks
 To check if any files need formatting, run the following command inside the development environment:
 
 ```bash
@@ -117,6 +125,13 @@ To check if any files need formatting, run the following command inside the deve
 
 This will check all files in the project and report any that need formatting.
 
+## Commitizen as precommit hooks
+To maintain standard commits using conventional commits, follow the instructions below:
+
+```bash
+cz commit
+```
+For more information on conventional commits, refer to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 # License
 Plutarch is released under the MIT license. See the [LICENSE](LICENSE) file for more information.

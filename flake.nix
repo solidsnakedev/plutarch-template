@@ -63,6 +63,7 @@
               "${inputs.liqwid-libs}/plutarch-context-builder"
               "${inputs.liqwid-libs}/liqwid-plutarch-extra"
               "${inputs.liqwid-libs}/liqwid-script-export"
+              "${inputs.liqwid-libs}/plutarch-unit"
               "${inputs.liqwid-libs.inputs.ply}/ply-core"
               "${inputs.liqwid-libs.inputs.ply}/ply-plutarch"
             ];

@@ -1,5 +1,20 @@
-dist-newstyle
+# Git
+
+.pre-commit-config.yaml
+
+# Cabal
+
+dist-newstyle/
+
+# VSCode
+
+.vscode/
+
+# Output
+
 *.plutus
 *.json
+
+# Env
+
 .direnv
-.pre-commit-config.yaml

@@ -46,7 +46,7 @@
           onchain.default = {
             src = ./.;
             ghc.version = "ghc925";
-            fourmolu.package = pkgs.haskell.packages.ghc943.fourmolu;
+            fourmolu.package = pkgs.haskell.packages.ghc945.fourmolu;
             hlint = { };
             cabalFmt = { };
             hasktags = { };
@@ -71,9 +71,9 @@
           ci.required = [ "all_onchain" ];
         };
 
-      flake.hydraJobs.x86_64-linux = (
-        self.checks.x86_64-linux
-        // self.packages.x86_64-linux
-      );
+      # flake.hydraJobs.x86_64-linux = (
+      #   self.checks.x86_64-linux
+      #   // self.packages.x86_64-linux
+      # );
     };
 }

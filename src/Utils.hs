@@ -1,4 +1,4 @@
-module Utils (evalT, evalWithArgsT, writePlutusScript) where
+module Utils (printT, evalT, evalWithArgsT, writePlutusScript) where
 
 import Cardano.Binary qualified as CBOR
 import Data.Aeson (KeyValue ((.=)), object)
@@ -8,6 +8,7 @@ import Data.Bifunctor (
  )
 import Data.ByteString.Base16 qualified as Base16
 import Data.ByteString.Lazy qualified as LBS
+import Data.Default (def)
 import Data.Text (
   Text,
   pack,
@@ -17,6 +18,7 @@ import Plutarch (
   Config (Config),
   TracingMode (DoTracing),
   compile,
+  printTerm,
  )
 import Plutarch.Evaluate (
   evalScript,
@@ -31,8 +33,8 @@ import "liqwid-plutarch-extra" Plutarch.Extra.Script (
   applyArguments,
  )
 
--- TODO: add the below
--- printTerm def validator
+printT :: forall {a :: PType}. ClosedTerm a -> String
+printT = printTerm def
 
 encodeSerialiseCBOR :: Script -> Text
 encodeSerialiseCBOR = Text.decodeUtf8 . Base16.encode . CBOR.serialize' . serialiseScript

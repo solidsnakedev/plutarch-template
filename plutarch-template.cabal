@@ -125,7 +125,10 @@ common dependencies
 
 library
   import:          lang, dependencies
-  exposed-modules: AlwaysSucceeds
+  exposed-modules:
+    AlwaysSucceeds
+    Utils
+
   other-modules:   Conversions
   hs-source-dirs:  src
 
